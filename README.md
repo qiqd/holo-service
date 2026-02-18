@@ -38,7 +38,7 @@ docker run -d \
 
 启动后，可以通过以下方式验证应用是否正常运行：
 
-- 访问 `http://localhost:56932/` 检查服务状态
+- 访问 `http://{your server ip}:56932/test` 检查服务状态
 - 查看容器日志：`docker logs holo_service`
 
 ### 5. 停止应用
