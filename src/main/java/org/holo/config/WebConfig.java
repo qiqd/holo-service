@@ -44,7 +44,7 @@ public class WebConfig implements WebMvcConfigurer {
                 userContent.removeUserId();
               }
             }).addPathPatterns("/**")
-            .excludePathPatterns("/user/login", "/user/register");
+            .excludePathPatterns("/user/login", "/user/register","/rule/**");
   }
 
   @Override

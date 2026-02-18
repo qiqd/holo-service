@@ -1,6 +1,6 @@
 package org.holo.service;
 
-import com.fasterxml.jackson.databind.util.BeanUtil;
+
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
 import org.holo.content.UserContent;
