@@ -16,93 +16,98 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @AllArgsConstructor
 @Document("app_setting")
 public class AppSetting {
-    /**
-     * 用户 id
-     */
-    @Id
-    private String userId;
-    /**
-     * 弹幕设置
-     */
-    private DanmakuSetting danmakuSetting;
+  /**
+   * 用户 id
+   */
+  @Id
+  private String userId;
+  /**
+   * 弹幕设置
+   */
+  private DanmakuSetting danmakuSetting;
+
+  /**
+   * 使用系统颜色，只在Android 12+ 以上版本生效
+   */
+  private Boolean useSystemColor;
+
+  /**
+   * 主题模式
+   * 0: 系统主题
+   * 1: 浅色主题
+   * 2: 深色主题
+   */
+  private Integer themeMode = 0;
+
+  /**
+   * App 主题色
+   */
+  private Integer colorSeed = 0xffd08b57;
+
+  /**
+   * 弹幕设置静态内部类
+   */
+  @Data
+  @Builder
+  @NoArgsConstructor
+  @AllArgsConstructor
+  public static class DanmakuSetting {
 
     /**
-     * 使用系统颜色，只在Android 12+ 以上版本生效
+     * 透明度 (默认: 1.0)
      */
-    private Boolean useSystemColor;
+    @Builder.Default
+    private Double opacity = 1D;
 
     /**
-     * 主题模式
-     * 0: 系统主题
-     * 1: 浅色主题
-     * 2: 深色主题
+     * 显示区域 (默认: 1.0)
      */
-    private Integer themeMode = 0;
+    @Builder.Default
+    private Double area = 1D;
 
     /**
-     * 弹幕设置静态内部类
+     * 字体大小 (默认: 16)
      */
-    @Data
-    @Builder
-    @NoArgsConstructor
-    @AllArgsConstructor
-    public static class DanmakuSetting {
+    @Builder.Default
+    private Double fontSize = 16D;
 
-        /**
-         * 透明度 (默认: 1.0)
-         */
-        @Builder.Default
-        private Double opacity = 1D;
+    /**
+     * 隐藏顶部弹幕 (默认: false)
+     */
+    @Builder.Default
+    private Boolean hideTop = false;
 
-        /**
-         * 显示区域 (默认: 1.0)
-         */
-        @Builder.Default
-        private Double area = 1D;
+    /**
+     * 隐藏滚动弹幕 (默认: false)
+     */
+    @Builder.Default
+    private Boolean hideScroll = false;
 
-        /**
-         * 字体大小 (默认: 16)
-         */
-        @Builder.Default
-        private Double fontSize = 16D;
+    /**
+     * 隐藏底部弹幕 (默认: false)
+     */
+    @Builder.Default
+    private Boolean hideBottom = false;
 
-        /**
-         * 隐藏顶部弹幕 (默认: false)
-         */
-        @Builder.Default
-        private Boolean hideTop = false;
+    /**
+     * 海量模式 (默认: false)
+     */
+    @Builder.Default
+    private Boolean massiveMode = false;
 
-        /**
-         * 隐藏滚动弹幕 (默认: false)
-         */
-        @Builder.Default
-        private Boolean hideScroll = false;
+    /**
+     * 弹幕偏移量 (默认: 0)
+     */
+    @Builder.Default
+    private Integer danmakuOffset = 0;
 
-        /**
-         * 隐藏底部弹幕 (默认: false)
-         */
-        @Builder.Default
-        private Boolean hideBottom = false;
-
-        /**
-         * 海量模式 (默认: false)
-         */
-        @Builder.Default
-        private Boolean massiveMode = false;
-
-        /**
-         * 弹幕偏移量 (默认: 0)
-         */
-        @Builder.Default
-        private Integer danmakuOffset = 0;
-
-        /**
-         * 过滤词，英文逗号分隔 (默认: "")
-         */
-        @Builder.Default
-        private String filterWords = "";
+    /**
+     * 过滤词，英文逗号分隔 (默认: "")
+     */
+    @Builder.Default
+    private String filterWords = "";
 
 
-    }
+  }
 
 }

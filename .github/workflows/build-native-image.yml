@@ -2,6 +2,10 @@ name: Build Native Image with GraalVM and Docker
 
 on:
   workflow_dispatch:  # 手动触发
+  push:
+    branches:
+      - 'main'
+      - 'master'
 
 jobs:
   # 构建Ubuntu本地镜像和Docker镜像
