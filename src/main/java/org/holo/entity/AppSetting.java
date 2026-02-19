@@ -42,7 +42,7 @@ public class AppSetting {
   /**
    * App 主题色
    */
-  private Integer colorSeed = 0xffd08b57;
+  private Long colorSeed = 0xffd08b57L;
 
   /**
    * 弹幕设置静态内部类

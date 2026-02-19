@@ -10,9 +10,9 @@
   </parent>
   <groupId>com.github.qiqd.holo</groupId>
   <artifactId>holo-service</artifactId>
-  <version>1.0.19</version>
+  <version>1.0.20</version>
   <name>Holo</name>
-  <description>Holo backend service provides RESTful APIs for Holo mobile app,power by Spring Boot 3.5.9</description>
+  <description>Holo service provides RESTful APIs for Holo app,power by Spring Boot 3.5.9</description>
   <url/>
   <licenses>
     <license/>
