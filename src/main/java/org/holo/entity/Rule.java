@@ -24,8 +24,8 @@ public class Rule {
   @Id
   private String id;
 
-  @Schema(description ="创建该规则的用户 ID", example = "64f0c0a0f0a0f0a0f0a0f0a0")
-  private String userId="";
+  @Schema(description = "创建该规则的用户 ID", example = "64f0c0a0f0a0f0a0f0a0f0a0")
+  private String userId = "";
 
   @Schema(description = "规则名称(通常为网站名称)", example = "示例网站")
   private String name = "";
@@ -35,6 +35,9 @@ public class Rule {
 
   @Schema(description = "规则logoUrl(通常是网站的logo)", example = "https://example.com/logo.png")
   private String logoUrl = "";
+
+  @Schema(description = "是否使用WebView(默认false)", example = "false")
+  private Boolean useWebView = false;
 
   @Schema(description = "规则版本号", example = "1.0")
   private String version = "1.0";
