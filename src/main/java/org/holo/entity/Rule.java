@@ -76,7 +76,7 @@ public class Rule {
   private String itemIdSelector = "";
 
   @Schema(description = "搜索类型选择器(通常是搜索结果的列表中的每一项的内容的类型)", example = ".genre")
-  private String itemGenreSelector;
+  private String itemGenreSelector = "";
 
   @Schema(description = "详情Url(通常是网站的详情页面)", example = "/detail/{id}")
   private String detailUrl = "";
@@ -99,6 +99,9 @@ public class Rule {
   @Schema(description = "剧集选择器(每一条线路下对应的剧集,一般是一个a标签)", example = ".episodes a")
   private String episodeSelector = "";
 
+  @Schema(description = "剧集是否反转(如果是,则剧集列表是从后往前,否则是从前往后)", example = "false")
+  private Boolean episodeReverse = false;
+
   @Schema(description = "播放页面Url(通常是网站的播放页面的视频播放地址)", example = "/play/{id}")
   private String playerUrl = "";
 
@@ -118,16 +121,16 @@ public class Rule {
   private String playerVideoSelector = "";
 
   @Schema(description = "视频元素属性(通常是视频标签的src属性,比如video标签的src属性)", example = "src")
-  private String videoElementAttribute;
+  private String videoElementAttribute = "";
 
   @Schema(description = "嵌入视频选择器,英文逗号分隔(通常是播放页面的嵌入视频标签,比如iframe等)", example = "iframe")
-  private String embedVideoSelector;
+  private String embedVideoSelector = "";
 
   @Schema(description = "是否等待视频元素加载完成(如果是,则等待视频元素加载完成,否则立即返回)", example = "true")
   private Boolean waitForMediaElement = true;
 
   @Schema(description = "视频url截取,通常是从params参数中截取视频url,比如params=videoUrl=xxxx,则截取xxxx,如果是null,则直接返回匹配的url", example = "videoUrl=")
-  private String videoUrlSubsChar;
+  private String videoUrlSubsChar="";
 
   @Schema(description = "规则更新时间")
   private LocalDateTime updateAt = LocalDateTime.now();
