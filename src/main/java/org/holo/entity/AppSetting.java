@@ -37,11 +37,13 @@ public class AppSetting {
    * 1: 浅色主题
    * 2: 深色主题
    */
+  @Builder.Default
   private Integer themeMode = 0;
 
   /**
    * App 主题色
    */
+  @Builder.Default
   private Long colorSeed = 0xffd08b57L;
 
   /**

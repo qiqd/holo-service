@@ -12,11 +12,11 @@ import java.util.List;
 public class RuleService {
   final RuleRepository ruleRepository;
 
- public List<Rule> queryAll() {
+  public List<Rule> queryAll() {
     return ruleRepository.findAll();
   }
 
- public   void saveAll(List<Rule> rules) {
+  public void saveAll(List<Rule> rules) {
     ruleRepository.saveAll(rules);
   }
 }
